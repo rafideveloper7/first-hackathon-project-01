@@ -1,0 +1,195 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===========================
+   GLOBAL STYLES
+=========================== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background-color: #f9fafb;
+}
+
+/* ===========================
+   HERO SECTION (Slider Background)
+=========================== */
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: 150px;
+
+  /* Background image properties */
+  background-image: url('your-image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* makes image cover container like background-size: cover */
+  opacity: 0.5;
+  z-index: -1;        /* keep it behind content */
+  border-radius: 10px;
+}
+
+
+
+/* Slider fills entire background */
+.slider-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.slider-container .slick-slider,
+.slider-container .slick-list,
+.slider-container .slick-track {
+  height: 100%;
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay for readability */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65));
+  z-index: 5;
+}
+
+/* Text content */
+.hero-text {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+.hero-text h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  animation: fadeUp 1s ease-out forwards;
+}
+
+.hero-text p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+.hero-btn {
+  display: inline-block;
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.85rem 2.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  animation: fadeUp 1.4s ease-out forwards;
+}
+
+.hero-btn:hover {
+  background-color: #1e40af;
+  transform: translateY(-3px);
+}
+
+/* Simple fade-up animation for text */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   FEATURED PRODUCTS
+=========================== */
+section.products-section {
+  background-color: #fff;
+  padding: 5rem 1rem;
+}
+
+section.products-section h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+/* ===========================
+   FEATURE CARDS SECTION
+=========================== */
+.features-section {
+  background: #f1f5f9;
+  padding: 4rem 1rem;
+}
+
+.feature-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.75rem 2rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
