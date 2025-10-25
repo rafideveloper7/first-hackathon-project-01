@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTruckFast } from '@fortawesome/free-solid-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { faTruckFast } from '@fortawesome/free-solid-svg-icons'
 
 
 const Navbar = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
             to="/cart"
             className="text-gray-600 hover:text-blue-600 relative"
           >
-            <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+            Cart
             {getCartItemsCount() > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-5 h-5 text-xs flex items-center justify-center">
                 {getCartItemsCount()}
@@ -92,7 +92,7 @@ const Navbar = () => {
               className="text-gray-600 hover:text-blue-600"
               onClick={() => setIsMenuOpen(false)}
             >
-              <FontAwesomeIcon icon={faShoppingCart} size="lg" /> ({getCartItemsCount()})
+              Cart
             </Link>
           </div>
         </div>
